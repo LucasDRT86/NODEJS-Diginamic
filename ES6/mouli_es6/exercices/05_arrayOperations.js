@@ -10,9 +10,12 @@
  * 
   */
 
+const multiplyByTwo = (arr) => arr.map((element) => element * 2);
+
+/*
 const multiplyByTwo = (arr) => {
-  arr.map((element) => element*2);
-}
+  return arr.map((element) => element * 2);
+}*/
 
 let array = [1,2,3];
 console.log(multiplyByTwo(array));
@@ -27,9 +30,8 @@ console.log(multiplyByTwo(array));
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const filterNameStartByA = (arr) => {
-  arr.filter((test)) = test.charAt(0) === 'A';
-}
+const filterNameStartByA = (arr) => arr.filter((value) => value [0]=== 'A');
+
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
  * retourne la somme des valeurs du tableau
@@ -40,7 +42,7 @@ const filterNameStartByA = (arr) => {
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const sum
+const sum = (array) => array.reduce((acc,value) => acc + value,0)
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
  * retourne l'utilisateur qui a l'id passé en 2e paramètre

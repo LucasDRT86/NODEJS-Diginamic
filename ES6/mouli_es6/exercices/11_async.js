@@ -11,7 +11,9 @@ const {sleep} = require("../exercices/10_promise");
  *    - ne pas utiliser async await
  * 
  */
-const usingThen
+const usingThen = (cb) =>{
+    sleep().then(cb)
+}
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
