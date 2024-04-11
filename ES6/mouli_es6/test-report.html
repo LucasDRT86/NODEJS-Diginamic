@@ -1,0 +1,303 @@
+<html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed,
+.summary-obsolete-snapshots {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMessages.suiteFailure {
+  border-top: none;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+/* OBSOLETE SNAPSHOTS */
+.suite-obsolete-snapshots {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.suite-obsolete-snapshots-header {
+  font-weight: bold;
+}
+.suite-obsolete-snapshots-item {
+  padding: 0.5rem;
+}
+.suite-obsolete-snapshots-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-obsolete-snapshots-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2024-04-11 11:30:54</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (0)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed summary-empty">0 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">C:\Users\lucas\OneDrive\Documents\Cours\CDA\NODEJS\EXOETTEST\ES6\mouli_es6\__tests__\06_composition.specs.js</div><div class="suite-time">0s</div></div><div class="suite-tests"><div class="test-result failed"><div class="failureMessages suiteFailure"> <pre class="failureMsg">  [1m● [22mTest suite failed to run
+
+    [1m[31mJest encountered an unexpected token[39m[22m
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see [4mhttps://jestjs.io/docs/ecmascript-modules[24m for how to enable it.
+     • If you are trying to use TypeScript, see [4mhttps://jestjs.io/docs/getting-started#using-typescript[24m
+     • To have some of your "node_modules" files transformed, you can specify a custom [1m"transformIgnorePatterns"[22m in your config.
+     • If you need a custom transformation specify a [1m"transform"[22m option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the [1m"moduleNameMapper"[22m config option.
+
+    You'll find more details and examples of these config options in the docs:
+    [36mhttps://jestjs.io/docs/configuration[39m
+    For information about custom transformations, see:
+    [36mhttps://jestjs.io/docs/code-transformation[39m
+
+    [1m[31mDetails:[39m[22m
+
+    SyntaxError: C:\Users\lucas\OneDrive\Documents\Cours\CDA\NODEJS\EXOETTEST\ES6\mouli_es6\exercices\06_composition.js: Missing initializer in const declaration. (11:12)
+
+    [0m [90m  9 |[39m [90m */[39m
+     [90m 10 |[39m
+    [31m[1m&gt;[22m[39m[90m 11 |[39m [36mconst[39m concat
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 12 |[39m
+     [90m 13 |[39m [90m/**[39m
+     [90m 14 |[39m [90m * utiliser l'opérateur de composition ... afin d'ajouter un élément à un tableau[39m[0m
+
+    [0m [90m 1 |[39m [36mconst[39m {describe[33m,[39m expect[33m,[39m test} [33m=[39m require([32m'@jest/globals'[39m)[33m;[39m
+     [90m 2 |[39m
+    [31m[1m&gt;[22m[39m[90m 3 |[39m [36mconst[39m {concat[33m,[39m push[33m,[39m merge[33m,[39m setName} [33m=[39m require([32m"../exercices/06_composition"[39m)[33m;[39m
+     [90m   |[39m                                        [31m[1m^[22m[39m
+     [90m 4 |[39m
+     [90m 5 |[39m describe([32m'concat'[39m[33m,[39m () [33m=&gt;[39m {
+     [90m 6 |[39m     test([32m"should concat two arrays"[39m[33m,[39m () [33m=&gt;[39m {[0m
+
+      [2mat constructor ([22mnode_modules/@babel/parser/src/parse-error.ts[2m:74:19)[22m
+      [2mat Parser.toParseError [as raise] ([22mnode_modules/@babel/parser/src/tokenizer/index.ts[2m:1487:19)[22m
+      [2mat Parser.raise [as parseVar] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:1547:16)[22m
+      [2mat Parser.parseVar [as parseVarStatement] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:1193:10)[22m
+      [2mat Parser.parseVarStatement [as parseStatementContent] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:546:21)[22m
+      [2mat Parser.parseStatementContent [as parseStatementLike] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:417:17)[22m
+      [2mat Parser.parseStatementLike [as parseModuleItem] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:354:17)[22m
+      [2mat Parser.parseModuleItem [as parseBlockOrModuleBlockBody] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:1385:16)[22m
+      [2mat Parser.parseBlockOrModuleBlockBody [as parseBlockBody] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:1359:10)[22m
+      [2mat Parser.parseBlockBody [as parseProgram] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:213:10)[22m
+      [2mat Parser.parseProgram [as parseTopLevel] ([22mnode_modules/@babel/parser/src/parser/statement.ts[2m:195:25)[22m
+      [2mat Parser.parseTopLevel [as parse] ([22mnode_modules/@babel/parser/src/parser/index.ts[2m:45:10)[22m
+      [2mat parse ([22mnode_modules/@babel/parser/src/index.ts[2m:66:38)[22m
+      [2mat parser ([22mnode_modules/@babel/core/src/parser/index.ts[2m:28:19)[22m
+          at parser.next (&lt;anonymous&gt;)
+      [2mat normalizeFile ([22mnode_modules/@babel/core/src/transformation/normalize-file.ts[2m:52:24)[22m
+          at normalizeFile.next (&lt;anonymous&gt;)
+      [2mat run ([22mnode_modules/@babel/core/src/transformation/index.ts[2m:38:36)[22m
+          at run.next (&lt;anonymous&gt;)
+      [2mat transform ([22mnode_modules/@babel/core/src/transform.ts[2m:29:20)[22m
+          at transform.next (&lt;anonymous&gt;)
+      [2mat evaluateSync ([22mnode_modules/gensync/index.js[2m:251:28)[22m
+      [2mat sync ([22mnode_modules/gensync/index.js[2m:89:14)[22m
+      [2mat fn ([22mnode_modules/@babel/core/src/errors/rewrite-stack-trace.ts[2m:97:14)[22m
+      [2mat transformSync ([22mnode_modules/@babel/core/src/transform.ts[2m:66:52)[22m
+      [2mat ScriptTransformer.transformSource ([22mnode_modules/@jest/transform/build/ScriptTransformer.js[2m:519:31)[22m
+      [2mat ScriptTransformer._transformAndBuildScript ([22mnode_modules/@jest/transform/build/ScriptTransformer.js[2m:648:40)[22m
+      [2mat ScriptTransformer.transform ([22mnode_modules/@jest/transform/build/ScriptTransformer.js[2m:700:19)[22m
+      [2mat Object.require ([22m[0m[36m__tests__/06_composition.specs.js[39m[0m[2m:3:40)[22m
+</pre></div></div></div></div></div></body></html>
