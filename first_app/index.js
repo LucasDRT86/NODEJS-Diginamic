@@ -63,9 +63,9 @@ app.put('/product/:id', (req, res) => {
   const index = products.findIndex( (product) => product.id === id  )
   const product = {
     id : id,
-    quantity: parseInt(req.query.quantity),
-    name : req.query.name,
-    price : parseFloat(req.query.price),
+    quantity: parseInt(req.body.quantity),
+    name : req.body.name,
+    price : parseFloat(req.body.price),
   }
 
   products[index] = product
